@@ -1,0 +1,269 @@
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
+}
+body {
+  background-color: #fff;
+  margin: 0;
+  position: relative;
+  scrollbar-width: none;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 0; 
+  animation: fadeIn 0.5s ease-in-out forwards; 
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+@keyframes fadeIn { 
+  to { 
+    opacity: 1; 
+  }
+} 
+html::-webkit-scrollbar {
+  display: none;  /* for Chrome, Safari, and Opera */
+}
+body::-webkit-scrollbar {
+  display: none;  /* for Chrome, Safari, and Opera */
+}
+
+
+.header {
+  width: 100%;
+  height: 5%;
+  display: flex;
+}
+.head-logo {
+  width: 15%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  display: flex;
+}
+.logo-img {
+  width: 40px;
+  height: 30px;
+}
+.main-head {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  display: flex;
+  width: 70%;
+}
+.end-head {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  display: flex;
+  width: 15%;
+}
+.backhome:hover {
+  color: #002e3c;
+}
+.backhome {
+  text-decoration: none;
+  color: #000;
+  font-size: 120%;
+}
+.main {
+  width: 100%;
+  height: 95%;
+  max-height: 95%;
+  overflow: hidden;
+  display: block;
+}
+.price {
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0px;
+}
+.proud {
+  width: 100%;
+  height: 86%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+@media (max-width: 2000px) {
+  .price {
+    width: 80%;
+    height: 30%;
+    margin-left: 10%;
+  }
+}
+@media (max-width: 1200px) {
+  .price {
+    width: 100%;
+    height: 40%;
+    margin-left: 0%;
+  }
+}
+.contaner {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  border: #0000006b 1px solid;
+  padding-left: 20px;
+  text-align: left;
+  align-content: center;
+}
+.text-1 {
+  color: #000000b4;
+}
+.text-2 {
+  color: #a10000;
+}
+.price-line {
+  width: 100%;
+  display: flex;
+  height: 30px;
+}
+.line-1 {
+  width: 80%;
+  height: 30px;
+  align-content: center;
+  color: #000000b4;
+}
+.line-2 {
+  width: 20%;
+  height: 30px;  
+  align-content: center;
+  color: #000000b4;
+}
+@media (max-width: 2000px) {
+  .line-1 {
+    width: 90%;
+  }
+  .line-2 {
+    width: 10%;
+  }
+}
+@media (max-width: 1200px) {
+  .line-1 {
+    width: 80%;
+  }
+  .line-2 {
+    width: 20%;
+  }
+}
+@media (max-width: 650px) {
+  .line-1 {
+    width: 75%;
+  }
+  .line-2 {
+    width: 25%;
+  }
+}
+.palce-order {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+  height: 40px;
+  color: #000;
+  background-color: #ffea00;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.palce-order:hover {
+  background-color: #efdb00;
+}
+
+.broduct-con {
+  width: 95%;
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 2.5%;
+}
+.img-con {
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+}
+.img-edit {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.product-con2 {
+  color: #fff;
+  display: flex;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  margin-left: -30%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #002b5530 0%, #00162c 30%, #00162c 70%);
+}
+.part1 {
+  height: 100%;
+  width: 31%;
+}
+.part2 {
+  height: 100%;
+  width: 39%;
+}
+.part3 {
+  height: 100%;
+  width: 30%;
+  align-items: center;
+  align-content: center;
+}
+.free {
+  width: 95%;
+  height: 40px;
+  margin-left: 2.5%;
+  background-color: #003569;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.free:hover {
+  background-color: #00264c;
+}
+.disc {
+  color: #ffffff90;
+}
+.qoun {
+  margin-top: -20px;
+}
+.button-ss{
+  margin-top: 10px;
+  width: 90%;
+  height: 30px;
+  background-color: #00264c;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
+.button-ss:hover{
+  background-color: #003263;
+}
+
+

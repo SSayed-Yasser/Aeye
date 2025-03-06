@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css-files/checkout-css/checkout.css">
+    <link rel="icon" href="./image/logos/logo-02.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+
+</head>
+<body>
+    <div class="header">
+        <div class="head-logo">
+            <img src="./image/logos/logo1.png" alt="" class="logo-img">
+            <h4 style="color: #002e3c;">A</h4>
+            <h4>EYE</h4>
+        </div>
+        <div class="main-head">
+            <h3 style="color: #002e3c;" id="cart-count">0</h3>
+            <h3>&nbspItems</h3>
+        </div>
+        <div class="end-head">
+            <a href="./index.html" class="backhome">Home</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="price">
+            <div class="contaner">
+                <h3>Order Summary</h3>
+                <div class="price-line">
+                    <div class="line-1">
+                        <h3 style="display: flex; margin: 0;" class="text-1" id="cart-count1">Items (0)</h3>
+                    </div>
+                    <div class="line-2">
+                        <h3 style="margin: 0;" id="items-price">0$</h3>
+                    </div>
+                </div>
+                <div class="price-line" style="margin-bottom: -15px;">
+                    <div class="line-1">
+                        <h3 style="display: flex; margin: 0;" class="text-1">Shipping & handling:</h3>
+                    </div>
+                    <div class="line-2">
+                        <h3 style="margin: 0;" id="shipping-price">0$</h3>
+                    </div>
+                </div>
+                <div class="price-line">
+                    <div class="line-1"></div>
+                    <div class="line-2">
+                        <hr style="margin-right: 55px; margin-left: 0px;">
+                    </div>
+                </div>
+                <div class="price-line" style="margin-top: -15px;">
+                    <div class="line-1">
+                        <h3 style="display: flex; margin: 0;" class="text-1">Total before tax:</h3>
+                    </div>
+                    <div class="line-2">
+                        <h3 style="margin: 0;" id="total-before-tax">0$</h3>
+                    </div>
+                </div>
+                <div class="price-line">
+                    <div class="line-1">
+                        <h3 style="display: flex; margin: 0;" class="text-1">Estimated tax (14%):</h3>
+                    </div>
+                    <div class="line-2">
+                        <h3 id="tax" style="margin: 0;">0$</h3>
+                    </div>
+                </div>
+                <hr style="margin-right: 40px; margin-left: 20px;">
+                <div class="price-line" style="margin-top: 10px;">
+                    <div class="line-1">
+                        <h3 style="display: flex; margin: 0;" class="text-2">Order total:</h3>
+                    </div>
+                    <div class="line-2">
+                        <h3 id="final-price" style="margin: 0; color: #a10000;">0$</h3>
+                    </div>
+                </div>
+                <button class="palce-order" onclick="confirmOrder()">Place your order</button>
+            </div>
+        </div>
+        <div class="proud">
+            <div id="checkout-products"></div>
+        </div>
+    </div>
+
+</body>
+<script src="./js-filse/checkout-js/checkout.js"></script>
+</html>

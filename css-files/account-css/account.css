@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: 'Cairo', sans-serif; /* يمكنك تغيير الخط */
+}
+
+.coming-soon h1 {
+  font-size: 4rem;
+  color: #333;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  animation: fade-in 2s ease-in-out infinite alternate;
+}
+
+/* تأثير بسيط */
+@keyframes fade-in {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
