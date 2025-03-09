@@ -6,6 +6,13 @@ function updateCartCount() {
 }
 updateCartCount();
 
+function showToast() {
+  Toastify({
+      text: "Login to bay",
+      duration: 3000
+  }).showToast();
+}
+
 function updateTotalPrice() {
   const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
   let totalPrice = selectedProducts.reduce((total, product) => total + (parseInt(product.price) * product.quantity), 0);
@@ -97,17 +104,24 @@ function removeProduct(index) {
   loadCheckoutProducts();
 }
 
-function confirmOrder() {
-  const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
-  const orders = JSON.parse(localStorage.getItem('orders')) || [];
-  orders.push(selectedProducts);
-  localStorage.setItem('orders', JSON.stringify(orders));
-  localStorage.removeItem('selectedProducts');
-  selectedProducts.forEach((product, index) => {
-      localStorage.removeItem(`delivery-${index}`);
-  });
-  alert('Order confirmed!');
-  window.location.href = 'index.html';
-}
+
+  function confirmOrder() {
+    if (localStorage.getItem('loginmethod') === '555') {
+      const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.push(selectedProducts);
+      localStorage.setItem('orders', JSON.stringify(orders));
+      localStorage.removeItem('selectedProducts');
+      selectedProducts.forEach((product, index) => {
+          localStorage.removeItem(`delivery-${index}`);
+      });
+      alert('Order confirmed!');
+      window.location.href = 'index.html';
+    } else {
+      showToast();
+    }
+  }
+
+
 
 loadCheckoutProducts();

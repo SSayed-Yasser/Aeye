@@ -80,7 +80,6 @@ function showToast() {
 
 // Define function to add product to cart 11111
 function addToCart3(button) {
-  if (localStorage.getItem("bay") == '55') {
     const productDiv = button.closest('.contant-containar-all');
     const productName = productDiv.querySelector('.name-all').textContent;
     const productImg = productDiv.querySelector('img').src;
@@ -112,10 +111,7 @@ function addToCart3(button) {
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
     updateCartCount();
-  } else {
-    showToast()
   }
-}
 // Apply event listeners to all 'quick-add-button-css' buttons
 document.querySelectorAll('.quick-add-button-css').forEach(button => {
   button.addEventListener('click', function() {
@@ -174,7 +170,6 @@ offersProducts.slice(0, 10).forEach((products) => {
 document.querySelector('.all-glasses-containar223344').innerHTML = proudct1HTML;
 
 function addToCart(button) {
-  if (localStorage.getItem("bay") == '55') {
     const productDiv = button.closest('.div-accs');
     const productName = productDiv.querySelector('.accs-h4').textContent;
     const productImg = productDiv.style.backgroundImage.slice(5, -2); 
@@ -205,11 +200,7 @@ function addToCart(button) {
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
     updateCartCount();
-  } else {
-    showToast()
   }
-  
-}
 document.querySelectorAll('.button-acc').forEach(button => {
   button.addEventListener('click', function() {
       addToCart(this);

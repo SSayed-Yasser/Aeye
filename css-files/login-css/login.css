@@ -1,12 +1,18 @@
+body {
+  max-width: 100%;
+}
 /* def */
 .create {
   display: none;
+  max-width: 100%;
 }
 .login {
   display: block;
+  max-width: 100%;
 }
 .forget {
   display: none;
+  max-width: 100%;
 }
 
 .continar {
@@ -137,12 +143,15 @@
 
 .part-1 {
   display: block;
+  max-width: 100%;
 }
 .part2 {
   display: none;
+  max-width: 100%;
 }
 .part3 {
   display: none;
+  max-width: 100%;
 }
 
 .eyeline-1, .eyeline-2, .eyeline-3 {
@@ -273,27 +282,31 @@
   }
   .continar {
     height: 100%;
-    width: 100%;
+    width: max-content;
     margin-left: 5%;
   }
   .left { 
-    width: 100%;
+    width: max-content;
   }
   .header-mian {
-    width: 70%;
-    margin-left: 18%;
+    width: 100%;
+    margin-left: 0%;
     text-align: center;
   }
   .part-1 {
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    margin-left: 2.5%;
   }
   .eyeline-1, .eyeline-2, .eyeline-3 {
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    margin-left: 2.5%;
   }
   .editess {
     width: 80%;
     margin-left: 10%;
   }
+  
 }
+
+
+

@@ -25,25 +25,25 @@
           <a id="acces-header" href="#" class="aa" onclick="brandshop()">Brands</a>
         </div>
         <div class="login-button-home">
-          <div class="bage-center" onclick="checkotCart()">
-            <img src="./image/icons/bag.png" alt="" class="header-cart">
+          <div class="bage-center" onclick="checkotCart()" style="margin-right: 10;">
+            <img src="./image/icons/bag.png" alt="" class="header-cart" onclick="">
             <p class="quantity" id="cart-count">2</p>
           </div>
-          <a href="orders.html" style="margin-left: -10px;">
-            <img src="./image/icons/tracking.png" alt="" class="img-header-login" style="width: 35px; height: 35px; margin-left: -10px;">
+          <a href="orders.html">
+            <img src="./image/icons/delivery-truck.png" alt="" class="img-header-login" style="width: 35px; height: 33px;">
           </a>
           <a href="login.html" id="adduser">
-            <img src="./image/icons/add-user.png" alt="" class="img-header-login">
-            </a>
-            <a href="account.html" id="user" style="display: none;">
-              <img src="./image/icons/user.png" alt="" class="img-header-login">
-            </a>
-            <script>
-              if (localStorage.getItem('loginmethod') === '555') {
-                document.getElementById('adduser').style.display = 'none';
-                document.getElementById('user').style.display = 'block';
-              }
-            </script>
+          <img src="./image/icons/add-user.png" alt="" class="img-header-login">
+          </a>
+          <a href="account.html" id="user" style="display: none;">
+            <img src="./image/icons/user.png" alt="" class="img-header-login">
+          </a>
+          <script>
+            if (localStorage.getItem('loginmethod') === '555') {
+              document.getElementById('adduser').style.display = 'none';
+              document.getElementById('user').style.display = 'block';
+            }
+          </script>
         </div>
       </div>
       <!-- header -->

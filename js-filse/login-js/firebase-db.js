@@ -19,6 +19,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
+// Check if user details are already remembered
+window.onload = function() {
+  if (localStorage.getItem('rememberedEmail') && localStorage.getItem('rememberedPassword')) {
+  document.getElementById('loginemail').value = localStorage.getItem('rememberedEmail');
+  document.getElementById('loginpass').value = localStorage.getItem('rememberedPassword');
+  document.getElementById('remember-me').checked = true;
+  }
+  };
+
 // Sign-Up Section
 const signUpButton = document.getElementById('createAcc');
 signUpButton.addEventListener('click', async (event) => {
@@ -110,18 +119,67 @@ loginButton.addEventListener('click', async () => {
 
       // Display user data
       displayStoredData();
-      window.location.href = '../../account.html';
+      window.location.href = '../account.html';
       localStorage.setItem('loginmethod', '555')
+      var rememberMe = document.getElementById('remember-me').checked;
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
       alert('Login successful!');
     } else {
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
       alert('No user data found in Firestore.');
     }
   } catch (error) {
     if (error.code === 'auth/user-not-found') {
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
       alert('No user found with this email.');
     } else if (error.code === 'auth/wrong-password') {
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
       alert('Incorrect password.');
     } else {
+      // If "Remember Me" is checked, store email and password
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      } else {
+        localStorage.setItem('rememberedEmail', email);
+        localStorage.setItem('rememberedPassword', password);
+      }
       console.error('Error logging in:', error);
       alert('Error logging in. Please try again.');
     }

@@ -53,15 +53,23 @@ img {
 }
 @media (max-width: 2000px) {
   img {
-    height: 680px;
+    height: 630px;
   }
   .slideshow-img {
     display: block;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   img {
-    height: 500px;
+    height: 460px;
+  }
+  .slideshow-img {
+    display: block;
+  }
+}
+@media (max-width: 1200px) {
+  img {
+    height: 440px;
   }
   .slideshow-img {
     display: block;
@@ -124,8 +132,8 @@ img {
 }
 @media (max-width: 2000px) {
   .slide-contant {
-    height: 680px;
-    margin-top: -715px;
+    height: 630px;
+    margin-top: -665px;
   }
   .h1-contant {
     font-size: 250%;
@@ -152,10 +160,40 @@ img {
     font-size: 100%;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .slide-contant {
-    height: 500px;
-    margin-top: -535px;
+    height: 460px;
+    margin-top: -495px;
+  }
+  .h1-contant {
+    font-size: 250%;
+  }
+  .p-contant {
+    margin-bottom: 10px;
+    font-size: 80%;
+  }
+  .p2-contant {
+    margin-top: 10px;
+    font-size: 80%;
+  }
+  .button-con {
+    background-color: #9f1300a2;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .button-con {
+    width: 35%;
+    height: 40px;
+    font-size: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .slide-contant {
+    height: 440px;
+    margin-top: -475px;
   }
   .h1-contant {
     font-size: 250%;
@@ -221,7 +259,7 @@ img {
     font-size: 60%;
   }
   .button-con {
-    width: 35%;
+    width: 50%;
     height: 30px;
     font-size: 70%;
   }

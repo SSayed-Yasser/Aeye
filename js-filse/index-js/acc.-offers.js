@@ -58,7 +58,6 @@ offersProducts.slice(0, 10).forEach((products) => {
 document.querySelector('.scroll-content23').innerHTML = proudct1HTML;
 
 function addToCart05(button) {
-  if (localStorage.getItem("bay") == '55') {
   const productDiv1 = button.closest('.div-accs');
   const productName1 = productDiv1.querySelector('.name-edit-123').textContent;
   const productImg = productDiv1.style.backgroundImage.slice(5, -2); 
@@ -90,10 +89,7 @@ function addToCart05(button) {
   localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
   updateCartCount();
-  } else {
-    showToast()
   }
-}
 document.querySelectorAll('.button-acc').forEach(button => {
   button.addEventListener('click', function() {
       addToCart05(this);

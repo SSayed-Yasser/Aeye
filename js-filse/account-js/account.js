@@ -3,7 +3,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebas
 import { getAuth, signOut, deleteUser, updateProfile } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 import { getFirestore, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
- 
 
 // Firebase configuration
 const firebaseConfig = {
@@ -20,6 +19,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
+
+// Initialize cart count on page load
+function updateCartCount() {
+  const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+  const cartCount = selectedProducts.reduce((total, product) => total + product.quantity, 0);
+  document.querySelector('#cart-count').textContent = cartCount;
+}
+updateCartCount();
 
 function displayUserData() {
   const storedData = localStorage.getItem('userData');

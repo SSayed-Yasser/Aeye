@@ -43,7 +43,6 @@ function showToast() {
 }
 // Define function to add product to cart 11111
 function addToCart04(button) {
-  if (localStorage.getItem("bay") == '55') {
     const productDiv = button.closest('.div-new2');
     const productName = productDiv.querySelector('.new-name-h4').textContent;
     const productImg = productDiv.querySelector('img').src;
@@ -73,10 +72,7 @@ function addToCart04(button) {
     }
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
     updateCartCount();
-  } else {
-    showToast()
   }
-}
 // Apply event listeners to all 'quick-add-button-css' buttons
 document.querySelectorAll('.quick-add-button-css-1').forEach(button => {
   button.addEventListener('click', function() {
