@@ -1,0 +1,476 @@
+<html lang="en">  
+</body>
+</html>
+<head>
+  <title>A-EYE</title> <!-- web name -->
+  <LInk rel="icon" href="./image/logos/logo-02.png" type="image/x-icon"> <!-- web icon -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>  <!-- onlin icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">  <!-- onlin icons -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css-files/body-html.css"> <!-- css file loc -->
+  <link rel="stylesheet" href="./css-files/index-css/header.css"> <!-- css file loc -->
+  <link rel="stylesheet" href="./css-files/login-css/login.css"> <!-- css file loc -->
+  <script type="module" src="./js-filse/login-js/firebase-db.js"></script>
+  <script type="module" src="./js-filse/login-js/loading.js"></script>
+</head>
+<body>
+      <!-- header -->
+      <div class="header" id="header">
+        <div class="logo">
+          <h5 class="header-logo-h5">AEYE</h5>
+        </div>
+        <div class="main-header">
+          <a id="allglassesheader" href="index.html" class="aa">Home</a>
+          <a id="loginheader" href="#" class="aa" onclick="
+            document.getElementById('createheader').style.color = '#000';
+            document.getElementById('createmain').style.display = 'none';
+
+            document.getElementById('loginheader').style.color = '#790000';
+            document.getElementById('loginmain').style.display = 'block';
+
+            document.getElementById('forgetheader').style.color = '#000';
+            document.getElementById('forgetmain').style.display = 'none';
+          ">Login</a>
+          <a id="createheader" href="#" class="aa" onclick="
+            document.getElementById('createheader').style.color = '#790000';
+            document.getElementById('createmain').style.display = 'block';
+            
+            document.getElementById('loginheader').style.color = '#000';
+            document.getElementById('loginmain').style.display = 'none';
+            
+            document.getElementById('forgetheader').style.color = '#000';
+            document.getElementById('forgetmain').style.display = 'none';
+          ">Sigin up</a>
+          <a id="forgetheader" href="#" class="aa" onclick="
+            document.getElementById('createheader').style.color = '#000';
+            document.getElementById('createmain').style.display = 'none';
+            
+            document.getElementById('loginheader').style.color = '#000';
+            document.getElementById('loginmain').style.display = 'none';
+            
+            document.getElementById('forgetheader').style.color = '#790000';
+            document.getElementById('forgetmain').style.display = 'block';
+          ">Forget Passowrd</a>
+        </div>
+        <div class="login-button-home">
+          <div class="bage-center" onclick="window.location.href = './checkout.html';" style="margin-right: 10;">
+            <img src="./image/icons/bag.png" alt="" class="header-cart" onclick="">
+            <p class="quantity" id="cart-count">2</p>
+          </div>
+          <a href="orders.html">
+            <img src="./image/icons/delivery-truck.png" alt="" class="img-header-login" style="width: 35px; height: 33px;">
+          </a>
+          <a href="login.html" id="adduser">
+            <img src="./image/icons/add-user.png" alt="" class="img-header-login">
+            </a>
+            <a href="account.html" id="user" style="display: none;">
+              <img src="./image/icons/user.png" alt="" class="img-header-login">
+            </a>
+            <script>
+              if (localStorage.getItem('loginmethod') === '555') {
+                document.getElementById('adduser').style.display = 'none';
+                document.getElementById('user').style.display = 'block';
+              }
+            </script>
+        </div>
+      </div>
+      <!-- header -->
+
+      <!-- create -->
+       <div class="create" id="createmain">
+        <div class="continar">
+          <div class="left">
+            <div class="header-mian">
+              <div class="welcome-massge">
+                <h1>Welcome to&nbsp;<h1 class="aeye-word">AEYE</h1></h1>
+              </div>
+              <h3 class="main-sign-word">Sign Up Your Account</h3>
+            </div>
+            <br>
+            <div class="part-1" id="part1sinup">
+              <div class="input-laple">
+                <p class="inp-text">Name</p>
+                <div class="input-div-style">
+                  <input id="nameAcc" type="text" class="input-style">
+                  <img src="./image/singin/user.png" alt="" class="input-img">
+                </div>
+              </div>
+  
+              <div class="input-laple">
+                <p class="inp-text">Email</p>
+                <div class="input-div-style">
+                  <input id="gmailAcc" type="email" class="input-style">
+                  <img src="./image/singin/mail.png" alt="" class="input-img">
+                </div>
+              </div>
+  
+              <div class="input-laple">
+                <p class="inp-text">Password</p>
+                <div class="input-div-style">
+                  <input id="passAcc" type="text" class="input-style">
+                  <img src="./image/singin/key.png" alt="" class="input-img">
+                </div>
+              </div>
+              <p id="erorrMasge" style="text-align: left; margin-bottom: 0px; margin-left: 10px; width: 300px;">Please fill in all fields</p>
+              <button class="login-button" onclick="
+                var name = document.getElementById('nameAcc').value;
+                var email = document.getElementById('gmailAcc').value;
+                var password = document.getElementById('passAcc').value;
+                var isValid = true;
+
+                // Validate name
+                if (name.length > 15) {
+                    document.getElementById('nameAcc').style.border = 'red 1px solid';
+                    document.getElementById('erorrMasge').innerText = 'Your Name is long Please write at most 14 characters.';
+                    document.getElementById('erorrMasge').style.color = 'red';
+                    isValid = false;
+                } else {
+                  document.getElementById('nameAcc').style.border = 'green 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is good';
+                  document.getElementById('erorrMasge').style.color = 'green';
+                }
+                if (name.length < 3) {
+                  document.getElementById('nameAcc').style.border = 'red 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is short Please write at least 4 characters.';
+                  document.getElementById('erorrMasge').style.color = 'red';
+                  isValid = false;
+                } else {
+                  document.getElementById('nameAcc').style.border = 'green 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is good';
+                  document.getElementById('erorrMasge').style.color = 'green';
+                }
+
+                // Validate email
+                if (!email.endsWith('@gmail.com')) {
+                  document.getElementById('gmailAcc').style.border = 'red 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Email most ending with @gmail.com';
+                  document.getElementById('erorrMasge').style.color = 'red';
+                  isValid = false;
+                } else {
+                  document.getElementById('gmailAcc').style.border = 'green 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is email';
+                  document.getElementById('erorrMasge').style.color = 'green';
+                }
+                if (email.length < 13) {
+                  document.getElementById('gmailAcc').style.border = 'red 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Email is short Please write 13 at all.';
+                  document.getElementById('erorrMasge').style.color = 'red';
+                  isValid = false;
+                } else {
+                  document.getElementById('gmailAcc').style.border = 'green 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is email';
+                  document.getElementById('erorrMasge').style.color = 'green';
+                }
+
+                // Validate password
+                if (password.length < 8) {
+                  document.getElementById('passAcc').style.border = 'red 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your password is short Please write at least 8 characters.';
+                  document.getElementById('erorrMasge').style.color = 'red';
+                  isValid = false;
+                } else {
+                  document.getElementById('passAcc').style.border = 'green 1px solid';
+                  document.getElementById('erorrMasge').innerText = 'Your Name is email';
+                  document.getElementById('erorrMasge').style.color = 'green';
+                }
+                if (isValid) {
+                  localStorage.setItem('nameSignup', name);
+                  localStorage.setItem('emailSignup', email);
+                  localStorage.setItem('passSignup', password);
+                  document.getElementById('part1sinup').style.display = 'none';
+                  document.getElementById('part2sinup').style.display = 'block';
+                  document.getElementById('part3sinup').style.display = 'none';
+                }
+              ">Continue</button>
+            </div>
+            <div class="part2" id="part2sinup">
+              <div class="eyeline-1">
+                  <div class="eyeblock1"><h4 class="aeyeText">AEYE</h4></div>
+                  <div class="eyeblock2"><h4 class="aeyeText">Sphere</h4></div>
+                  <div class="eyeblock2"><h4 class="aeyeText">Cylinder</h4></div>
+                  <div class="eyeblock2"><h4 class="aeyeText">Axis</h4></div>
+              </div>
+              <div class="eyeline-2">
+                  <div class="eyeblock1"><h4 class="aeyeText">Right (OD)</h4></div>
+                  <div class="eyeblock3"><input id="odSp" type="text" class="inputeyefildes" placeholder="+2.50"></div>
+                  <div class="eyeblock3"><input id="odCy" type="text" class="inputeyefildes" placeholder="-1.50"></div>
+                  <div class="eyeblock3"><input id="odAx" type="text" class="inputeyefildes" placeholder="70"></div>
+              </div>
+              <div class="eyeline-3">
+                  <div class="eyeblock1"><h4 class="aeyeText">Left (OS)</h4></div>
+                  <div class="eyeblock3"><input id="osSp" type="text" class="inputeyefildes" placeholder="-2.50"></div>
+                  <div class="eyeblock3"><input id="osCy" type="text" class="inputeyefildes" placeholder="+3.50"></div>
+                  <div class="eyeblock3"><input id="osAx" type="text" class="inputeyefildes" placeholder="80"></div>
+              </div>
+              <p id="errorMessage" style="text-align: left; margin-bottom: 0px; margin-left: 17%; width: 70%; color: red;">Please fill in all fields, and if you wanna skip, add all 0</p>
+              <button class="login-button widthbut" onclick="validateFields()">Continue</button>
+              <script>
+                  function validateFields() {
+                      var odSp = document.getElementById('odSp').value;
+                      var odCy = document.getElementById('odCy').value;
+                      var odAx = document.getElementById('odAx').value;
+                      var osSp = document.getElementById('osSp').value;
+                      var osCy = document.getElementById('osCy').value;
+                      var osAx = document.getElementById('osAx').value;
+                      var isValid = true;
+              
+                      // Function to validate a single field
+                      function validateField(value, fieldId, isAxis = false) {
+                          const numericValue = parseFloat(value);
+                          const isEmpty = value.trim() === "";
+              
+                          if (isEmpty || isNaN(numericValue) || numericValue < -500 || numericValue > 500 || (isAxis && (numericValue < 0 || numericValue > 180))) {
+                              document.getElementById(fieldId).style.border = 'red 1px solid';
+                              isValid = false;
+                          } else {
+                              document.getElementById(fieldId).style.border = 'green 1px solid';
+                              isValid = true;
+                          }
+                      }
+              
+                      // Validate all fields
+                      validateField(odSp, 'odSp');
+                      validateField(odCy, 'odCy');
+                      validateField(odAx, 'odAx', true);
+                      validateField(osSp, 'osSp');
+                      validateField(osCy, 'osCy');
+                      validateField(osAx, 'osAx', true);
+              
+                      // Check if any field is invalid
+                      if (!isValid) {
+                          document.getElementById('errorMessage').style.display = 'block';
+                          isValid = false;
+                      } else {
+                          document.getElementById('errorMessage').style.display = 'none';
+                          console.log("All fields are valid!");
+                          isValid = true;
+                          localStorage.setItem('odSp', odSp);
+                          localStorage.setItem('odCy', odCy);
+                          localStorage.setItem('odAx', odAx);
+                          localStorage.setItem('osSp', osSp);
+                          localStorage.setItem('osCy', osCy);
+                          localStorage.setItem('osAx', osAx);
+                          document.getElementById('part1sinup').style.display = 'none';
+                          document.getElementById('part2sinup').style.display = 'none';
+                          document.getElementById('part3sinup').style.display = 'block';
+                      }
+                  }
+              </script>
+            </div>
+            <div class="part3" id="part3sinup">
+              <div class="input-laple editess">
+                <p class="inp-text">Phone</p>
+                <div class="input-div-style">
+                  <input id="phoneAccc" type="text" class="input-style" placeholder="01120726090">
+                  <img src="./image/singin/phone-receiver-silhouette.png" alt="" class="input-img">
+                </div>
+              </div>
+              <div class="input-laple editess">
+                <p class="inp-text">Address</p>
+                <div class="input-div-style">
+                  <textarea style="height: 100px; padding-right: 40px;" id="addressAccc" type="text" class="input-style" placeholder="Cairo-Badr - Downtown mall - Building 5 - Apartment 2"></textarea>
+                  <img style="margin-top: 40px;" src="./image/singin/task-list.png" alt="" class="input-img">
+                </div>
+              </div>
+              <p id="errorMessage2" style="margin-top: 80px; text-align: left; margin-bottom: 0px; margin-left: 26%; width: 50%;">Please fill in all fields</p>
+              <button id="conbu" class="login-button widthbut" onclick="createACC()">Continue</button>
+              <button id="createAcc" class="login-button widthbut" style="display: none;">Create Your Account</button>
+              <script>
+                  function createACC() {
+                    var phone = document.getElementById('phoneAccc').value;
+                    var address = document.getElementById('addressAccc').value;
+                    var isValid = true;
+
+                    // Validate phone
+                    var phoneRegex = /^(011|012|015|010)\d{8}$/;
+                    if (!phoneRegex.test(phone)) {
+                        document.getElementById('phoneAccc').style.border = 'red 1px solid';
+                        document.getElementById('errorMessage2').innerText = 'Your Phone is short Please write 11 characters. and It starts with 011, 012, 010, 015';
+                        document.getElementById('errorMessage2').style.color = 'red';
+                        isValid = false;
+                    } else {
+                      document.getElementById('phoneAccc').style.border = 'green 1px solid';
+                      document.getElementById('errorMessage2').innerText = 'Your Name is good';
+                      document.getElementById('errorMessage2').style.color = 'green';
+                    }
+
+                    // Validate address
+                    if (address.length < 6) {
+                        document.getElementById('addressAccc').style.border = 'red 1px solid';
+                        document.getElementById('errorMessage2').innerText = 'Your Location is short Please write at least 6 characters.';
+                        document.getElementById('errorMessage2').style.color = 'red';
+                        isValid = false;
+                    } else {
+                      document.getElementById('addressAccc').style.border = 'green 1px solid';
+                      document.getElementById('errorMessage2').innerText = 'Your Name is good';
+                      document.getElementById('errorMessage2').style.color = 'green';
+                    }
+
+                    
+                    if (isValid) {
+                      localStorage.setItem('phoneSignup', phone);
+                      localStorage.setItem('addressSignup', address);
+                      document.getElementById('conbu').style.display = 'none';
+                      document.getElementById('createAcc').style.display = 'block';
+                    }
+                  }
+              </script>
+            </div>
+          </div>
+          
+
+          <div class="right" >
+            <div class="right-contant">*
+              <h2>Customize Your EyeGlass</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Trendy Glasses For All Ages</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Up to 70% off on
+                sunglasses</h2>
+            </div>
+          </div>
+        </div>
+       </div>
+      <!-- create -->
+
+      <!-- login -->
+      <div class="login" id="loginmain">
+        <div class="continar">
+          <div class="left">
+            <div class="header-mian">
+              <div class="welcome-massge">
+                <h1>Welcome to&nbsp;<h1 class="aeye-word">AEYE</h1></h1>
+              </div>
+              <h3 class="main-sign-word">Login Your Account</h3>
+            </div>
+            <br>
+            <div class="part-1" id="part1sinup">
+              <div class="input-laple">
+                <p class="inp-text">Email</p>
+                <div class="input-div-style">
+                  <input id="loginemail" type="email" class="input-style">
+                  <img src="./image/singin/mail.png" alt="" class="input-img">
+                </div>
+              </div>
+  
+              <div class="input-laple">
+                <p class="inp-text">Password</p>
+                <div class="input-div-style">
+                  <input id="loginpass" type="text" class="input-style">
+                  <img src="./image/singin/key.png" alt="" class="input-img">
+                </div>
+              </div>
+              <div class="remmber-div">
+                <div class="forgetpass-div">
+                  <a href="./forget.html" class="forget-h5 forget-h6">Forget Password</a>
+                </div>
+                <div class="remm-div">
+                  <input type="checkbox" id="remember-me" style="margin-top: 14px;">
+                  <h5 class="forget-h5" style="color: black; margin-top: 10px;" onclick="">Remmber me</h5>
+                </div>
+              </div>
+              <button id="loginButton" class="login-button">Login</button>
+            </div>
+          </div>
+          
+
+          <div class="right" >
+            <div class="right-contant">*
+              <h2>Customize Your EyeGlass</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Trendy Glasses For All Ages</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Up to 70% off on
+                sunglasses</h2>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+      <!-- login -->
+
+      <!-- forget -->
+      <div class="forget" id="forgetmain">
+        <div class="continar">
+          <div class="left">
+            <div class="header-mian">
+              <div class="welcome-massge">
+                <h1>Welcome to&nbsp;<h1 class="aeye-word">AEYE</h1></h1>
+              </div>
+              <h3 class="main-sign-word">Forget Your Account Password</h3>
+            </div>
+            <br>
+            <div class="part-1" id="part1sinup">
+              <div class="input-laple">
+                <p class="inp-text">Email</p>
+                <div class="input-div-style">
+                  <input id="forgetemail" type="email" class="input-style">
+                  <img src="./image/singin/mail.png" alt="" class="input-img">
+                </div>
+              </div>
+              <button id="forgetButton" class="login-button">Send Mail</button>
+            </div>
+          </div>
+          
+
+          <div class="right" >
+            <div class="right-contant">*
+              <h2>Customize Your EyeGlass</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Trendy Glasses For All Ages</h2>
+            </div>
+            <div class="right-contant">*
+              <h2>Up to 70% off on
+                sunglasses</h2>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+      <!-- forget -->
+
+
+
+      <div class="noneee" style="display: none;">
+        <!-- login -->
+       <div class="login">
+        <h1>Login Page</h1>
+        <form id="loginForm">
+          <input type="email" id="email1" placeholder="Enter your email" required><br>
+          <input type="password" id="password1" placeholder="Enter your password" required><br>
+          <button type="button" id="">Login</button>
+        </form>
+        <h2>Stored Data:</h2>
+        <div id="displayData"></div>
+       </div>     
+      <!-- login -->
+
+      <!-- signup -->
+      <h1>Sign Up</h1>
+      <form id="signUpForm">
+        <input type="text" id="name" placeholder="Enter your name" required><br>
+        <input type="email" id="email" placeholder="Enter your email" required><br>
+        <input type="password" id="password" placeholder="Enter your password" required><br>
+        <input type="text" id="eyesight" placeholder="Enter your eyesight measurement" required><br>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required><br>
+        <input type="text" id="address" placeholder="Enter your address" required><br>
+        <button type="button" id="submitButton">Sign Up</button>
+      </form>
+      <!-- signup -->
+
+      
+
+      <h2>Forgot Password?</h2>
+      <form id="forgotPasswordForm">
+        <input type="email" id="forgotEmail" placeholder="Enter your email" required><br>
+        <button type="button" id="resetPasswordButton">Send Password Reset Email</button>
+      </form>
+      </div>
+</body>
+</html>
