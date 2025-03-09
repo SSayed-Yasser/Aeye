@@ -52,8 +52,8 @@
   .all-glasses-containar {
       grid-template-columns: repeat(1, 1fr);
       width: 95%;
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 5%;
+      margin-right: 5%;
   }
 }
 .contant-containar-all {

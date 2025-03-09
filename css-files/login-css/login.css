@@ -276,21 +276,21 @@ body {
     margin-left: 25%;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .right {
     display: none;
   }
   .continar {
     height: 100%;
-    width: max-content;
+    width: 90%;
     margin-left: 5%;
   }
   .left { 
-    width: max-content;
+    width: 100%;
   }
   .header-mian {
-    width: 100%;
-    margin-left: 0%;
+    width: 90%;
+    margin-left: 5%;
     text-align: center;
   }
   .part-1 {
