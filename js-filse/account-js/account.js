@@ -86,7 +86,7 @@ document.getElementById('logoutButton').addEventListener('click', async () => {
       await signOut(auth);
       localStorage.clear();
       alert('You have been logged out.');
-      window.location.href = '../../login.html';
+      window.location.href = './login.html';
   } catch (error) {
       console.error('Error during logout:', error);
       alert('Failed to logout. Please try again.');
@@ -105,7 +105,7 @@ document.getElementById('deleteAccountButton').addEventListener('click', async (
 
           localStorage.clear();
           alert('Your account has been deleted.');
-          window.location.href = '../../signup.html';
+          window.location.href = './login.html';
       } catch (error) {
           console.error('Error deleting account:', error);
           alert('Failed to delete account. Please try again.');

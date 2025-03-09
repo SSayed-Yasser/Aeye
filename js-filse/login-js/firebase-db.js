@@ -119,7 +119,7 @@ loginButton.addEventListener('click', async () => {
 
       // Display user data
       displayStoredData();
-      window.location.href = '../account.html';
+      window.location.href = './account.html';
       localStorage.setItem('loginmethod', '555')
       var rememberMe = document.getElementById('remember-me').checked;
       // If "Remember Me" is checked, store email and password
