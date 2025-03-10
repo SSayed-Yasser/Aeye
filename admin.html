@@ -1,13 +1,14 @@
 <html lang="en">
 <head>
-  <title>Orders</title> <!-- web name -->
+  <title>Admin</title> <!-- web name -->
   <LInk rel="icon" href="./image/logos/logo-02.png" type="image/x-icon"> <!-- web icon -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css-files/body-html.css"> <!-- css file loc -->
   <link rel="stylesheet" href="./css-files/index-css/header.css"> <!-- css file loc -->
-  <link rel="stylesheet" href="./css-files/orders-css/orders.css"> <!-- css file loc -->
-  <script type="module" src="./js-filse/orders-js/order.js"></script>
+  <link rel="stylesheet" href="./css-files/admin-css/admin.css"> <!-- css file loc -->
+  <script type="module" src="./js-filse/admin-js/admin.js"></script>
+  <script type="module" src="./js-filse/admin-js/acc.js"></script>
 </head>
 <body>
   <!-- header -->
@@ -17,8 +18,7 @@
     </div>
     <div class="main-header">
       <a id="all-glasses-header" href="index.html#new-sec" class="aa">Home</a>
-      <a id="all-glasses-header" href="index.html#new-sec" class="aa">Shop</a>
-      <a id="all-glasses-header" href="index.html#new-sec" class="aa">Cart</a>
+      <a id="all-glasses-header" href="#" class="aa" onclick="">Orders</a>
     </div>
     <div class="login-button-home">
       <div class="bage-center" onclick="window.location.href = './checkout.html';" style="margin-right: 10;">
@@ -43,10 +43,17 @@
     </div>
   </div>
   <!-- header -->
-  <main class="orders-container">
-    <div id="orders-list">
-      <!-- يتم إضافة الطلبات هنا -->
-    </div>
-  </main>
+  <div class="orderss" id="ordersss">
+    <div id="admin-container" class="hidden">
+      <h1>Admin Panel</h1>
+      <div id="orders-list">
+      </div>
+    </div>   
+  
+    <div id="error-message" class="hidden">
+      <h1>Access Denied: Admin Only</h1>  
+    </div>    
+  </div>
+
 </body>
 </html>
