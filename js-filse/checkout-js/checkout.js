@@ -71,7 +71,7 @@ function loadCheckoutProducts() {
         <div class="product-con2">
           <div class="part1"></div>
           <div class="part2">
-            <h3 class="proudct-name">${product.name}</h3>
+            <h4 class="proudct-name">${product.name}</h4>
             <p class="disc">${product.discr}</p>
             <div class="qoun" style="display: flex;">
               <p>Price: ${product.price}</p>
@@ -196,3 +196,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 loadCheckoutProducts();
+
+
+function itemes() {
+  const selectedProducts2 = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+  const checkoutProductsDiv2 = document.getElementById('sayed-products');
+
+  checkoutProductsDiv2.innerHTML = '';
+  selectedProducts2.forEach((product, index) => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+    <div class="price-line">
+      <div class="line-1">
+          <h4 style="display: flex; margin: 0; color: cadetblue;" class="text-1" id="items">${product.quantity} ${product.name}</h4>
+      </div>
+      <div class="line-2">
+          <h4 style="margin: 0; color: cadetblue;" id="item-price">${product.price}</h4>
+      </div>
+    </div>
+    `;
+    checkoutProductsDiv2.appendChild(productDiv);
+  });
+}
+
+itemes();

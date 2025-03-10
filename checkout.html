@@ -34,15 +34,17 @@
                         <h3 style="display: flex; margin: 0;" class="text-1" id="cart-count1">Items (0)</h3>
                     </div>
                     <div class="line-2">
-                        <h3 style="margin: 0;" id="items-price">0$</h3>
+                        <h3 style="margin: 0;" id="items-price">0</h3>
                     </div>
+                </div>
+                <div class="price-line" style="display: block; height: max-content;" id="sayed-products">
                 </div>
                 <div class="price-line" style="margin-bottom: -15px;">
                     <div class="line-1">
                         <h3 style="display: flex; margin: 0;" class="text-1">Shipping & handling:</h3>
                     </div>
                     <div class="line-2">
-                        <h3 style="margin: 0;" id="shipping-price">0$</h3>
+                        <h3 style="margin: 0;" id="shipping-price">0</h3>
                     </div>
                 </div>
                 <div class="price-line">
@@ -56,7 +58,7 @@
                         <h3 style="display: flex; margin: 0;" class="text-1">Total before tax:</h3>
                     </div>
                     <div class="line-2">
-                        <h3 style="margin: 0;" id="total-before-tax">0$</h3>
+                        <h3 style="margin: 0;" id="total-before-tax">0</h3>
                     </div>
                 </div>
                 <div class="price-line">
@@ -64,7 +66,7 @@
                         <h3 style="display: flex; margin: 0;" class="text-1">Estimated tax (14%):</h3>
                     </div>
                     <div class="line-2">
-                        <h3 id="tax" style="margin: 0;">0$</h3>
+                        <h3 id="tax" style="margin: 0;">0</h3>
                     </div>
                 </div>
                 <hr style="margin-right: 40px; margin-left: 20px;">
@@ -73,10 +75,13 @@
                         <h3 style="display: flex; margin: 0;" class="text-2">Order total:</h3>
                     </div>
                     <div class="line-2">
-                        <h3 id="final-price" style="margin: 0; color: #a10000;">0$</h3>
+                        <h3 id="final-price" style="margin: 0; color: #a10000;">0</h3>
                     </div>
                 </div>
                 <button id="confirmOrder" class="palce-order" onclick="confirmOrder()">Place your order</button>
+                <div class="payment">
+                    <h5 class="h5-orderpayment">Available payment method is cash only</h5>
+                </div>
             </div>
         </div>
         <div class="proud">

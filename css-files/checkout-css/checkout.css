@@ -95,7 +95,7 @@ body::-webkit-scrollbar {
 }
 .proud {
   width: 100%;
-  height: 86%;
+  height: max-content;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -187,6 +187,26 @@ body::-webkit-scrollbar {
 .palce-order:hover {
   background-color: #efdb00;
 }
+.payment {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+  height: 40px;
+  color: #000;
+  background-color: #dddddd;
+  border: none;
+  border-radius: 10px;
+  color: #ff0000;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+.h5-orderpayment {
+  margin: 0;
+  margin-top: 20px;
+}
 
 .broduct-con {
   width: 95%;
@@ -196,6 +216,7 @@ body::-webkit-scrollbar {
   display: flex;
   margin-bottom: 10px;
   margin-left: 2.5%;
+  overflow: hidden;
 }
 .img-con {
   width: 30%;
@@ -221,6 +242,7 @@ body::-webkit-scrollbar {
 .part1 {
   height: 100%;
   width: 31%;
+  font-size: 80%;
 }
 .part2 {
   height: 100%;
@@ -249,6 +271,9 @@ body::-webkit-scrollbar {
 }
 .disc {
   color: #ffffff90;
+  font-size: 80%;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 .qoun {
   margin-top: -20px;
